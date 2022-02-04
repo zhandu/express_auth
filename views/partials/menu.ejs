@@ -1,0 +1,20 @@
+<div class="ui inverted menu">
+    <a class="<% if (title === 'Home') { %> active <% } %> item" href="/">
+        <i class="home icon"></i> Home
+    </a>
+    <% if (isAuth) { %>
+    <a class="<% if (title === 'Dashboard') { %> active <% } %> item" href="/dashboard">
+        <i class="bars icon"></i> Dashboard
+    </a>
+    <a class="<% if (title === 'Logout') { %> active <% } %> item" href="/logout">
+        <i class="sign-out icon"></i> Logout
+    </a>
+    <% } else { %>
+        <a class="<% if (title === 'Register') { %> active <% } %> item" href="/register">
+            <i class="user plus icon"></i> Register
+        </a>
+        <a class="<% if (title === 'Login') { %> active <% } %> item" href="/login">
+            <i class="sign-in icon"></i> Login
+        </a>
+    <% } %>
+</div>

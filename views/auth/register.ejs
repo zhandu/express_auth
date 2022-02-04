@@ -1,0 +1,47 @@
+<% if (error) { %>
+<div class="ui error message">
+    <i class="close icon"></i>
+    <div class="header">
+        <%= error.param.charAt(0).toUpperCase() + error.param.slice(1) %>
+    </div>
+    <ul class="list">
+        <li><%= error.msg %></li>
+    </ul>
+</div>
+<% } %>
+<form class="ui large form" method="POST" action="/register">
+    <div class="ui stacked segment">
+        <div class="field">
+            <div class="ui left icon input">
+                <i class="user icon"></i>
+                <input type="text" name="firstName" placeholder="First Name" value="<%= user.firstName %>">
+            </div>
+        </div>
+        <div class="field">
+            <div class="ui left icon input">
+                <i class="user icon"></i>
+                <input type="text" name="lastName" placeholder="Last Name" value="<%= user.lastName %>">
+            </div>
+        </div>
+        <div class="field">
+            <div class="ui left icon input">
+                <i class="user icon"></i>
+                <input type="text" name="email" placeholder="E-mail address" value="<%= user.email %>">
+            </div>
+        </div>
+        <div class="field">
+            <div class="ui left icon input">
+                <i class="lock icon"></i>
+                <input type="password" name="password" placeholder="Password">
+            </div>
+        </div>
+        <div class="field">
+            <div class="ui left icon input">
+                <i class="lock icon"></i>
+                <input type="password" name="passwordConfirm" placeholder="PasswordConfirm">
+            </div>
+        </div>
+        <input type="submit" value="Register" class="ui fluid large teal submit button">
+    </div>
+    <div class="ui error message"></div>
+</form>
